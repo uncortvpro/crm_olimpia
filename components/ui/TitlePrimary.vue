@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex flex-col min-h-[100vh]">
+  <h2 class="font-bold text-[25px] md:text-[30px] xl:text-[40px] text-white">
     <slot />
-  </div>
+  </h2>
 </template>
 
 <style scoped></style>

@@ -50,6 +50,7 @@ export default <Partial<Config>> {
       },
       colors: {
         'primary-color': '#9de500',
+        'primary-gray': "#727272",
         dark: '#3b3b3b'
       },
       screens: {
