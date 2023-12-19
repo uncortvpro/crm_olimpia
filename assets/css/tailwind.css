@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    line-height: 100%;
+  }
+  button {
+    line-height: 100%;
+  }
+  .container {
+    /* max-width: 1760px !important; */
+  }
+  .no_scroll_bar::-webkit-scrollbar {
+    width: 0;
+  }
+  .scroll_bar {
+    scrollbar-width: 3px;
+    scrollbar-color: #c8c8be #c8c8be;
+  }
+  .scroll_bar::-webkit-scrollbar {
+    width: 0;
+  }
+  .scroll_bar::-webkit-scrollbar {
+    width: 7px;
+    height: 10px;
+  }
+  .scroll_bar::-webkit-scrollbar-thumb {
+    background-color: #c8c8be;
+    border-radius: 20px;
+  }
+
+  body {
+    /* font-family: "Montserrat", sans-serif; */
+    /* background-color: #ffffff; */
+  }
+  .input_without_arrow::-webkit-outer-spin-button,
+  .input_without_arrow::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  .input_without_arrow[type="number"] {
+    -moz-appearance: textfield;
+  }
+  .container-reset {
+    padding: 0;
+    width: 100%;
+    max-width: none !important;
+  }
+}
