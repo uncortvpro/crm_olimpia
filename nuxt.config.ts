@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    '@nuxt/ui', "nuxt-svgo", '@pinia/nuxt',
+    '@nuxt/ui', "nuxt-svgo", '@pinia/nuxt', '@vueuse/nuxt'
   ],
   ssr: false,
   css: ['~/assets/css/fonts.css'],
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Temlate Nuxt 3',
+      title: 'Olimpia',
       meta: [
         {
           name: 'viewport',
@@ -33,6 +33,6 @@ export default defineNuxtConfig({
         },
       ],
     },
-    buildAssetsDir: 'assets',
+    // buildAssetsDir: 'assets',
   }
 })

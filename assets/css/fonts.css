@@ -1,143 +1,177 @@
-/* Montserrat Thin */
+/* Nunito Thin */
 @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-Thin.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-Thin.ttf") format("truetype");
     font-weight: 100;
     font-style: normal;
   }
-  
-  /* Montserrat ExtraLight */
+
+  /* Nunito ExtraLight */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-ExtraLight.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-ExtraLight.ttf") format("truetype");
     font-weight: 200;
     font-style: normal;
   }
-  
-  /* Montserrat Light */
+
+  /* Nunito Light */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-Light.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
   }
-  
-  /* Montserrat Regular */
+
+  /* Nunito Regular */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
   }
-  
-  /* Montserrat Medium */
+
+  /* Nunito Medium */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-Medium.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
   }
-  
-  /* Montserrat SemiBold */
+
+  /* Nunito SemiBold */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-SemiBold.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
   }
-  
-  /* Montserrat Bold */
+
+  /* Nunito Bold */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
   }
-  
-  /* Montserrat ExtraBold */
+
+  /* Nunito ExtraBold */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-ExtraBold.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
   }
-  
-  /* Montserrat Black */
+
+  /* Nunito Black */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-Black.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-Black.ttf") format("truetype");
     font-weight: 900;
     font-style: normal;
   }
-  
-  /* Montserrat Thin Italic */
+
+  /* Nunito Thin Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-ThinItalic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-ThinItalic.ttf") format("truetype");
     font-weight: 100;
     font-style: italic;
   }
-  
-  /* Montserrat ExtraLight Italic */
+
+  /* Nunito ExtraLight Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-ExtraLightItalic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-ExtraLightItalic.ttf") format("truetype");
     font-weight: 200;
     font-style: italic;
   }
-  
-  /* Montserrat Light Italic */
+
+  /* Nunito Light Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-LightItalic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-LightItalic.ttf") format("truetype");
     font-weight: 300;
     font-style: italic;
   }
-  
-  /* Montserrat Italic */
+
+  /* Nunito Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-Italic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-Italic.ttf") format("truetype");
     font-weight: 400;
     font-style: italic;
   }
-  
-  /* Montserrat Medium Italic */
+
+  /* Nunito Medium Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-MediumItalic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-MediumItalic.ttf") format("truetype");
     font-weight: 500;
     font-style: italic;
   }
-  
-  /* Montserrat SemiBold Italic */
+
+  /* Nunito SemiBold Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-SemiBoldItalic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-SemiBoldItalic.ttf") format("truetype");
     font-weight: 600;
     font-style: italic;
   }
-  
-  /* Montserrat Bold Italic */
+
+  /* Nunito Bold Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-BoldItalic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-BoldItalic.ttf") format("truetype");
     font-weight: 700;
     font-style: italic;
   }
-  
-  /* Montserrat ExtraBold Italic */
+
+  /* Nunito ExtraBold Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-ExtraBoldItalic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-ExtraBoldItalic.ttf") format("truetype");
     font-weight: 800;
     font-style: italic;
   }
-  
-  /* Montserrat Black Italic */
+
+  /* Nunito Black Italic */
   @font-face {
-    font-family: "Montserrat";
-    src: url("/fonts/montserrat/Montserrat-BlackItalic.ttf") format("truetype");
+    font-family: "Nunito";
+    src: url("/fonts/nunito/Nunito-BlackItalic.ttf") format("truetype");
     font-weight: 900;
     font-style: italic;
+  }
+
+
+
+/* Syne Regular */
+  @font-face {
+    font-family: "Syne";
+    src: url("/fonts/nunito/Nunito-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  /* Syne Medium */
+  @font-face {
+    font-family: "Syne";
+    src: url("/fonts/syne/Syne-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  /* Syne Bold */
+  @font-face {
+    font-family: "Syne";
+    src: url("/fonts/syne/Syne-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* Syne ExtraBold */
+  @font-face {
+    font-family: "Syne";
+    src: url("/fonts/syne/Syne-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
   }

@@ -26,10 +26,11 @@ export default <Partial<Config>> {
       xl: "1200px",
       "2xl": "1400px",
       "3xl": "1600px",
-      "4xl": "1760px",
+      "4xl": "1800px",
     },
     fontFamily: {
-      // montserrat: ["Montserrat", "sans"],
+      Primary: ["Nunito", "sans"],
+      Logo: ["Syne", "sans"],
     },
     extend: {
       gridTemplateColumns: {
@@ -37,14 +38,19 @@ export default <Partial<Config>> {
       gridTemplateRows: {
       },
       transitionDuration: {
+        'hover': '200ms',
       },
       opacity: {
+        'hover': '60%',
       },
       backgroundImage: {
       },
       boxShadow: {
+
       },
       colors: {
+        'primary-color': '#9de500',
+        dark: '#3b3b3b'
       },
       screens: {
         "is-hover": { raw: "(hover: hover)" },

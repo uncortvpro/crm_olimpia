@@ -1,7 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <NuxtPage></NuxtPage>
+  <LayoutBase>
+    <LayoutHeaderProfile></LayoutHeaderProfile>
+    <NuxtPage />
+  </LayoutBase>
 </template>
 
 <style scoped></style>

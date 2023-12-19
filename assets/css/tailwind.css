@@ -2,49 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    line-height: 100%;
+@layer components {
+  .bg_blur_dark {
+    background-color: rgba(59, 59, 59, 0.4);
+    backdrop-filter: blur(52px);
   }
-  button {
-    line-height: 100%;
+  .bg_primary_xs {
+    background-color: #1d1d1d;
+    background-image: radial-gradient(#ddf0b5 -136%, transparent 58%),
+      radial-gradient(#ff6928 -114%, transparent 71%),
+      radial-gradient(#9de500 -124%, transparent 60%);
+    background-size: 80vw 80vw, 90vw 90vw, 95vw 95vw;
+    background-repeat: no-repeat;
+    background-position: -10% 110%, 10% 80%, 834% -6%;
   }
-  .container {
-    /* max-width: 1760px !important; */
-  }
-  .no_scroll_bar::-webkit-scrollbar {
-    width: 0;
-  }
-  .scroll_bar {
-    scrollbar-width: 3px;
-    scrollbar-color: #c8c8be #c8c8be;
-  }
-  .scroll_bar::-webkit-scrollbar {
-    width: 0;
-  }
-  .scroll_bar::-webkit-scrollbar {
-    width: 7px;
-    height: 10px;
-  }
-  .scroll_bar::-webkit-scrollbar-thumb {
-    background-color: #c8c8be;
-    border-radius: 20px;
+  .bg_primary_sm {
+    background-color: #1d1d1d;
+    background-image: radial-gradient(#ddf0b5 -136%, transparent 58%),
+      radial-gradient(#ff6928 -114%, transparent 71%),
+      radial-gradient(#9de500 -124%, transparent 60%);
+    background-size: 60vw 60vw, 70vw 70vw, 75vw 75vw;
+    background-repeat: no-repeat;
+    background-position: -10% 110%, 10% 80%, 234% -6%;
   }
 
-  body {
-    /* font-family: "Montserrat", sans-serif; */
-    /* background-color: #ffffff; */
+  .bg_primary_md {
+    background-color: #1d1d1d;
+    background-image: radial-gradient(#ddf0b5 -136%, transparent 58%),
+      radial-gradient(#ff6928 -114%, transparent 71%),
+      radial-gradient(#9de500 -124%, transparent 60%);
+    background-size: 40vw 40vw, 50vw 50vw, 55vw 55vw;
+    background-repeat: no-repeat;
+    background-position: -10% 110%, 10% 80%, 154% -6%;
   }
-  .input_without_arrow::-webkit-outer-spin-button,
-  .input_without_arrow::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+  .bg_primary_lg {
+    background-color: #1d1d1d;
+    background-image: radial-gradient(#ddf0b5 -136%, transparent 58%),
+      radial-gradient(#ff6928 -114%, transparent 71%),
+      radial-gradient(#9de500 -124%, transparent 60%);
+    background-size: 30vw 30vw, 35vw 35vw, 45vw 45vw;
+    background-repeat: no-repeat;
+    background-position: -10% 110%, 10% 80%, 151% 50%;
   }
-  .input_without_arrow[type="number"] {
-    -moz-appearance: textfield;
-  }
-  .container-reset {
-    padding: 0;
-    width: 100%;
-    max-width: none !important;
-  }
+}
+* {
+  @apply leading-[100%];
+}
+button {
+  @apply leading-[100%];
+}
+.container {
+  @apply !max-w-none;
+}
+.no_scroll_bar::-webkit-scrollbar {
+  width: 0;
+}
+.scroll_bar {
+  scrollbar-width: 3px;
+  scrollbar-color: #c8c8be #c8c8be;
+}
+.scroll_bar::-webkit-scrollbar {
+  width: 0;
+}
+.scroll_bar::-webkit-scrollbar {
+  width: 7px;
+  height: 10px;
+}
+.scroll_bar::-webkit-scrollbar-thumb {
+  background-color: #c8c8be;
+  border-radius: 20px;
+}
+
+body {
+  @apply font-Primary min-h-[100vh] md:bg_primary_md bg_primary_xs sm:bg_primary_sm lg:bg_primary_lg;
+}
+.input_without_arrow::-webkit-outer-spin-button,
+.input_without_arrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.input_without_arrow[type="number"] {
+  -moz-appearance: textfield;
+}
+.container-reset {
+  @apply p-0 w-full !max-w-none;
 }
