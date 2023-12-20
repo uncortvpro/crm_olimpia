@@ -37,7 +37,7 @@
       </CommonMenuProfileItem>
     </li>
     <li>
-      <CommonMenuProfileItem to="/profile/my_orders">
+      <CommonMenuProfileItem to="/profile/tasks">
         <template #logo>
           <SvgoTasks class="!w-full !h-auto"></SvgoTasks>
         </template>

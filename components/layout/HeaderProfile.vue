@@ -27,7 +27,7 @@ provide("switchMenu", switchMenu);
       <CommonMenuList :isActive="isMobileMenu">
         <template #mobile>
           <CommonMenuProfileList
-            class="flex bg_blur_dark rounded-b-[40px] flex-col pt-[67px] lg:pt-0 px-[15px] gap-[26px] relative z-[15] pb-[32px] lg:py-0 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+            class="flex rounded-b-[40px] flex-col pt-[67px] lg:pt-0 px-[15px] gap-[26px] relative z-[15] pb-[32px] lg:py-0 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
           ></CommonMenuProfileList>
         </template>
       </CommonMenuList>

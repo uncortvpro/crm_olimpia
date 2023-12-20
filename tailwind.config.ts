@@ -14,19 +14,19 @@ export default <Partial<Config>> {
     container: {
       center: true,
       padding: {
-        DEFAULT: "15px",
-        xl: "20px",
+        DEFAULT: `${VAR.CONTAINER_PADDING_XS}px`,
+        xl:  `${VAR.CONTAINER_PADDING_XL}px`,
       },
     },
     screens: {
-      xs: "375px",
-      sm: "576px",
-      md: "768px",
-      lg: "992px",
-      xl: "1200px",
-      "2xl": "1400px",
-      "3xl": "1600px",
-      "4xl": "1800px",
+      xs: `${VAR.BREAKPOINTS_XS}px`,
+      sm: `${VAR.BREAKPOINTS_SM}px`,
+      md: `${VAR.BREAKPOINTS_MD}px`,
+      lg: `${VAR.BREAKPOINTS_LG}px`,
+      xl: `${VAR.BREAKPOINTS_XL}px`,
+      '2xl': `${VAR.BREAKPOINTS_2XL}px`,
+      '3xl': `${VAR.BREAKPOINTS_3XL}px`,
+      '4xl': `${VAR.BREAKPOINTS_4XL}px`,
     },
     fontFamily: {
       Primary: ["Nunito", "sans"],
@@ -51,6 +51,7 @@ export default <Partial<Config>> {
       colors: {
         'primary-color': '#9de500',
         'primary-gray': "#727272",
+        "dark-transparent": "#0000001f",
         dark: '#3b3b3b'
       },
       screens: {

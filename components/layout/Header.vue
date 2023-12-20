@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <header class="sticky top-0 z-30 bg-transparent">
-    <nav class="container  w-full z-20">
+  <header class="relative  top-0 z-30 bg-transparent">
+    <nav class="container w-full z-20">
       <div class="flex flex-wrap items-center justify-between mx-auto py-4">
         <CommonLogo
           href="https://flowbite.com/"

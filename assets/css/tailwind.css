@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  .padding_table_cell {
+    @apply p-[10px] 3xl:py-[19px];
+  }
+  .table_text {
+    @apply text-[9px] text-left sm:text-[12px] font-normal text-white;
+  }
   .bg_blur_dark {
     background-color: rgba(59, 59, 59, 0.4);
     backdrop-filter: blur(52px);

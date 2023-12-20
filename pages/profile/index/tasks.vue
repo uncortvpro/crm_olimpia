@@ -1,7 +1,32 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const isModal = ref(true);
+</script>
 
 <template>
-  <div>tasks</div>
+  <LayoutModulePage title="Задачі">
+    <template #header>
+      <div class="flex items-center gap-[20px] md:gap-[25px] xl:gap-[30px]">
+        <UiButtonPrimary>Додати задачу</UiButtonPrimary>
+        <UiButtonOpacityDelete></UiButtonOpacityDelete>
+      </div>
+    </template>
+    <template #content>
+      <UiModalWarning v-model="isModal">Додати задачу</UiModalWarning>
+      <UiTable>
+        <template #headers>
+          <UiTableCellHeader></UiTableCellHeader>
+          <UiTableCellHeader>Дата</UiTableCellHeader>
+          <UiTableCellHeader>Задача</UiTableCellHeader>
+          <UiTableCellHeader>Відповідальний</UiTableCellHeader>
+          <UiTableCellHeader>Статус</UiTableCellHeader>
+          <UiTableCellHeader>Термін</UiTableCellHeader>
+        </template>
+        <template #items>
+          <PagesTasksTableItem v-for="item in 10"></PagesTasksTableItem>
+        </template>
+      </UiTable>
+    </template>
+  </LayoutModulePage>
 </template>
 
 <style scoped></style>
