@@ -49,6 +49,9 @@ const setPage = (page: number) => {
         <slot name="items"></slot>
       </tbody>
     </table>
+    <div class="flex justify-center mt-[35px] xl:mt-[30px]">
+      <UiPagination :max="5" :page-count="5" :total="100" :model-value="1" />
+    </div>
     <!-- <div
       class="flex mt-[15px] items-center justify-between md:justify-end gap-[20px] xl:gap-[40px]"
       v-if="pagination"

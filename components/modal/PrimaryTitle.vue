@@ -6,12 +6,12 @@ defineProps<{
 </script>
 
 <template>
-  <UiModal :ui="{ ...ui }">
+  <ModalPrimary :ui="{ ...ui }">
     <div class="flex flex-col">
       <UiTitlePrimarySmall class="text-center">{{ title }}</UiTitlePrimarySmall>
       <slot />
     </div>
-  </UiModal>
+  </ModalPrimary>
 </template>
 
 <style scoped></style>

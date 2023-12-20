@@ -3,10 +3,13 @@
 <template>
   <UiTableItem>
     <template #header>
-      <span>Lorem ipsum dolor sit amet </span>
+      <UiCheckbox @click.stop="" class="inline-block align-middle"></UiCheckbox>
+      <span class="ml-[13px]"
+        >Lorem ipsum dolor sit amet
+      </span>
     </template>
     <template #elements="{ active }">
-      <UiTableCell :vIf="active">
+      <UiTableCell class="hidden 3xl:table-cell" :vIf="active">
         <template #title></template>
         <template #value>
           <UiCheckbox></UiCheckbox>

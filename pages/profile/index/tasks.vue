@@ -11,7 +11,13 @@ const isModal = ref(true);
       </div>
     </template>
     <template #content>
-      <UiModalWarning v-model="isModal">Додати задачу</UiModalWarning>
+      <ModalPrimaryTitleClose
+        v-model="isModal"
+        label="Додати задачу"
+      ></ModalPrimaryTitleClose>
+      <!-- <ModalPrimaryWarning v-model="isModal"
+        >Ви впевнені, що хочете видалити задачу?</ModalPrimaryWarning
+      > -->
       <UiTable>
         <template #headers>
           <UiTableCellHeader></UiTableCellHeader>

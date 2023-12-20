@@ -13,7 +13,7 @@ const closeModal = () => {
 </script>
 
 <template>
-  <UiModal
+  <ModalPrimary
     :ui="{
       ...ui,
     }"
@@ -39,7 +39,7 @@ const closeModal = () => {
       </template>
     </UCard>
     <slot />
-  </UiModal>
+  </ModalPrimary>
 </template>
 
 <style scoped></style>

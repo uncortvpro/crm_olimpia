@@ -58,7 +58,7 @@ const switchItem = (value: boolean) => {
         </UiButtonOpacity>
       </div>
     </td>
-    <td class="col-span-3 pt-[15px] 3xl:pt-0">
+    <td class="col-span-3 pt-[15px] relative z-10 3xl:pt-0">
       <slot name="additional-buttons" />
     </td>
     <button
