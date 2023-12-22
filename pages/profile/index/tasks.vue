@@ -11,10 +11,10 @@ const isModal = ref(true);
       </div>
     </template>
     <template #content>
-      <ModalPrimaryTitleClose
+      <ModalCreateTask
         v-model="isModal"
         label="Додати задачу"
-      ></ModalPrimaryTitleClose>
+      ></ModalCreateTask>
       <!-- <ModalPrimaryWarning v-model="isModal"
         >Ви впевнені, що хочете видалити задачу?</ModalPrimaryWarning
       > -->

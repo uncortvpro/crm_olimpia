@@ -34,7 +34,7 @@ const closeModal = () => {
       <template #header>
         <div class="flex items-center justify-center">
           <UiTitlePrimarySmall class="text-center">{{ label }}</UiTitlePrimarySmall>
-          <UiButtonOpacityClose class="absolute right-[20px] top-[20px]" @click="closeModal"></UiButtonOpacityClose>
+          <UiButtonOpacityClose class="absolute focus:outline-none right-[20px] top-[20px]" @click="closeModal"></UiButtonOpacityClose>
         </div>
       </template>
     </UCard>

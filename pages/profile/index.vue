@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  middleware: ["auth"],
+});
+</script>
 
 <template>
   <div class="lg:grid relative grid-cols-12 items-start 3xl:grid-cols-8">
@@ -10,7 +14,7 @@
       ></CommonMenuProfileList>
     </div>
     <div
-      class="lg:px-[30px]  flex flex-col col-span-9 2xl:col-span-10 3xl:col-span-7 lg:py-[30px] 4xl:px-[44px] 4xl:py-[44px]"
+      class="lg:px-[30px] flex flex-col col-span-9 2xl:col-span-10 3xl:col-span-7 lg:py-[30px] 4xl:px-[44px] 4xl:py-[44px]"
     >
       <div class="container flex flex-col flex-1 relative lg:container-reset">
         <NuxtPage></NuxtPage>
