@@ -1,5 +1,14 @@
 <script setup lang="ts">
-const isModal = ref(true);
+const isModal = ref(false);
+
+const tasksStore = useTasksStore();
+const tasks = computed(() => tasksStore.tasks);
+
+const fetchTasks = () => {
+  tasksStore.fetchTasks();
+};
+
+fetchTasks();
 </script>
 
 <template>
@@ -28,7 +37,11 @@ const isModal = ref(true);
           <UiTableCellHeader>Термін</UiTableCellHeader>
         </template>
         <template #items>
-          <PagesTasksTableItem v-for="item in 10"></PagesTasksTableItem>
+          <PagesTasksTableItem
+            v-for="task in tasks"
+            :key="task._id"
+            :task="task"
+          ></PagesTasksTableItem>
         </template>
       </UiTable>
     </template>

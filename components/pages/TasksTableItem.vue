@@ -1,12 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  task: Task;
+}>();
+</script>
 
 <template>
   <UiTableItem>
     <template #header>
       <UiCheckbox @click.stop="" class="inline-block align-middle"></UiCheckbox>
-      <span class="ml-[13px]"
-        >Lorem ipsum dolor sit amet
-      </span>
+      <span class="ml-[13px]"> {{ task?.headline }} </span>
     </template>
     <template #elements="{ active }">
       <UiTableCell class="hidden 3xl:table-cell" :vIf="active">
@@ -16,26 +18,28 @@
         </template>
       </UiTableCell>
       <UiTableCell :vIf="active">
-        <template #title>Клієнт</template>
-        <template #value>Клієнт</template>
+        <template #title>Дата</template>
+        <template #value>{{ useDate(task?.date) }}</template>
       </UiTableCell>
       <UiTableCell :vIf="active">
         <template #title>Задача</template>
-        <template #value>Задача</template>
+        <template #value>{{ task?.headline }}</template>
       </UiTableCell>
       <UiTableCell :vIf="active">
         <template #title>Відповідальний</template>
-        <template #value>Відповідальний</template>
+        <template #value>{{ task?.responsible }}</template>
       </UiTableCell>
       <UiTableCell :vIf="active">
         <template #title>Статус</template>
         <template #value>
-          <CommonStatusOutput color="#FF6928">qdqwq</CommonStatusOutput>
+          <CommonStatusOutput :color="task?.status?.colour">{{
+            task?.status?.status
+          }}</CommonStatusOutput>
         </template>
       </UiTableCell>
       <UiTableCell :vIf="active">
         <template #title>Термін</template>
-        <template #value>Термін</template>
+        <template #value>{{ useDate(task.deadline) }}</template>
       </UiTableCell>
     </template>
     <template #additional-buttons>

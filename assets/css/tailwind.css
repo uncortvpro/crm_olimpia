@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer components {
+  .container-reset {
+    @apply !p-0 w-full !max-w-none;
+  }
+
   .input_primary_style {
     @apply bg-primary-gray text-[10px] focus:outline-none rounded-[40px] md:text-[12px] xl:text-[14px] px-[15px] py-[8px] xl:px-[20px] xl:py-[15px];
   }
@@ -91,7 +95,4 @@ body {
 }
 .input_without_arrow[type="number"] {
   -moz-appearance: textfield;
-}
-.container-reset {
-  @apply p-0 w-full !max-w-none;
 }

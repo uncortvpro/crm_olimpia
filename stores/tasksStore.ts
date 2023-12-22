@@ -1,72 +1,51 @@
 import { defineStore } from "pinia";
 
-export const useObjectivesStore = defineStore("objectivesStore", () => {
-//     const objectives = ref<Objective[]>([]);
-//     const page = ref<number>(1);
-//     const keyWord = ref("");
-//     const endPage = ref(1);
-
-//     const sorting = ref<SortingObjective>("");
-//     const reverseSorting = ref<boolean>(false);
-
-//     const setSorting = (value: SortingObjective) => {
-//         useSorting(value, reverseSorting, sorting, fetchObjectives);
-//     }
+export const useTasksStore = defineStore("tasksStore", () => {
+  const tasks = ref<Task[]>([]);
+  const page = ref<number>(1);
+  const endPage = ref(1);
 
 
-//     function searchObjectives(value: string) {
-//         keyWord.value = value;
-//         fetchObjectives();
-//     }
+  function setPage(newPage: number) {
+    if (newPage === 0) return false;
+    page.value = newPage;
 
-//     function setPage(newPage: number) {
-//         if(newPage === 0) return false;
-//         page.value = newPage;
+    fetchTasks();
+  }
 
-//         fetchObjectives();
-//     }
+  function deleteTask(id: string) {
 
-//     function deleteObjectives(id: string) {
+    useAuthFetch(`${useApiUrl()}/delete_task`, {
+      body: {
+        task_id: id,
+      },
+    }).then(res => {
+      if (res.message === true) {
+        fetchTasks();
+      }
+    });
+  }
 
-//         useAuthFetch(`${useApiUrl()}/delete_task`, {
-//             body: {
-//                 task_id: id,
-//             },
-//         }).then(res => {
-//             if (res.message === true) {
-//                 fetchObjectives();
-//             }
-//         });
-//     }
+  function fetchTasks() {
+    useAuthFetch(`${useApiUrl()}/tasks`, {
+      body: {
+        page: page.value,
+        per_page: 10,
+      },
+    }).then((res) => {
+      tasks.value = res.tasks;
+      endPage.value = res.total_pages;
+    }).catch(res => {
+      console.error(res);
+    });
+  };
 
-//     function fetchObjectives() {
-//         useAuthFetch(`${useApiUrl()}/tasks`, {
-//             body: {
-//                 page: page.value,
-//                 per_page: 10,
-//                 keyword: keyWord.value,
-//                 sort_by: sorting.value,
-//                 reverse_sort: reverseSorting.value,
-//             },
-//         }).then((res) => {
-//             objectives.value = res.tasks;
-//             endPage.value = res.total_pages;
-//         }).catch(res => {
-//             console.error(res);
-//         });
-//     };
-
-// return {
-//     fetchObjectives,
-//     searchObjectives,
-//     deleteObjectives,
-//     setPage,
-//     objectives,
-//     endPage,
-//     keyWord,
-//     page,
-//     setSorting,
-//     sorting,
-//     reverseSorting
-// }
+  return {
+    fetchTasks,
+    deleteTask,
+    setPage,
+    tasks,
+    endPage,
+    page,
+  }
 })
