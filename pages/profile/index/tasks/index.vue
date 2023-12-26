@@ -1,11 +1,17 @@
 <script setup lang="ts">
 const tasksStore = useTasksStore();
-const tasks = computed(() => tasksStore.tasks);
+const isModalRemove = ref(false);
+const deletionTasks = ref<string[]>([]);
 
-const isModalCreate = ref<boolean>(false);
-const changeModalCreate = (value: boolean) => {
-  isModalCreate.value = value;
+const tasks = computed(() => tasksStore.tasks);
+const totalPages = computed(() => tasksStore.totalPages);
+const setPage = (page: number) => tasksStore.setPage(page);
+
+const switchModalRemove = (value: boolean) => {
+  isModalRemove.value = value;
 };
+
+const deleteRequest = () => [tasksStore.deleteTask(deletionTasks.value)];
 
 const fetchTasks = () => {
   tasksStore.fetchTasks();
@@ -21,11 +27,20 @@ fetchTasks();
         <UiButtonPrimary to="/profile/tasks/new_task"
           >Додати задачу</UiButtonPrimary
         >
-        <UiButtonOpacityDelete></UiButtonOpacityDelete>
+        <UiButtonOpacityDelete
+          :disabled="deletionTasks.length < 1"
+          @click="switchModalRemove(true)"
+        ></UiButtonOpacityDelete>
       </div>
     </template>
     <template #content>
-      <UiTable>
+      <ModalPrimaryWarning
+        v-model="isModalRemove"
+        @confirm="deleteRequest"
+        @closeModal="switchModalRemove(false)"
+        >Ви впевнені, що хочете видалити задачу?</ModalPrimaryWarning
+      >
+      <UiTable :totalPages="totalPages" @setPage="setPage">
         <template #headers>
           <UiTableCellHeader></UiTableCellHeader>
           <UiTableCellHeader>Дата</UiTableCellHeader>
@@ -39,6 +54,8 @@ fetchTasks();
             v-for="task in tasks"
             :key="task._id"
             :task="task"
+            v-model:selectDeletion="deletionTasks"
+            @deleteAction="switchModalRemove(true)"
           ></PagesTasksTableItem>
         </template>
       </UiTable>

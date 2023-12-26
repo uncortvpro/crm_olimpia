@@ -11,6 +11,7 @@ const closeModal = () => {
 
 const confirm = () => {
   emits("confirm");
+  closeModal();
 };
 </script>
 

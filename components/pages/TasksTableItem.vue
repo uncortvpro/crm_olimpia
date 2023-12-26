@@ -1,20 +1,47 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   task: Task;
+  selectDeletion: string[];
 }>();
+const selectDelete = ref(false);
+const emits = defineEmits(["update:selectDeletion", "deleteAction"]);
+
+const selectDeletion = () => {
+  let newArray: string[] = [];
+  if (!selectDelete.value) {
+    newArray = props.selectDeletion.filter((el) => el !== props.task._id);
+  }
+  if (selectDelete.value) {
+    newArray = [...props.selectDeletion, props.task._id];
+  }
+  emits("update:selectDeletion", newArray);
+};
+
+const deleteOne = () => {
+  emits("update:selectDeletion", [props.task._id]);
+  emits("deleteAction");
+};
+
+watch(selectDelete, () => {
+  selectDeletion();
+});
 </script>
 
 <template>
   <UiTableItem>
     <template #header>
-      <UiCheckbox @click.stop="" class="inline-block align-middle"></UiCheckbox>
+      <UiCheckbox
+        v-model="selectDelete"
+        @click.stop=""
+        class="inline-block align-middle"
+      ></UiCheckbox>
       <span class="ml-[13px]"> {{ task?.headline }} </span>
     </template>
     <template #elements="{ active }">
       <UiTableCell class="hidden 3xl:table-cell" :vIf="active">
         <template #title></template>
         <template #value>
-          <UiCheckbox></UiCheckbox>
+          <UiCheckbox v-model="selectDelete"></UiCheckbox>
         </template>
       </UiTableCell>
       <UiTableCell :vIf="active">
@@ -46,10 +73,10 @@ defineProps<{
       <div class="flex items-center 3xl:justify-end gap-[15px] md:gap-[25px]">
         <UiButtonOutline
           class="!px-[20px] !text-[11px] md:!text-[12px] xl:!text-[14px] !py-[8px]"
-          @click.stop=""
+          @click.stop="navigateTo(`/profile/tasks/edit_task/${task._id}`)"
           >Редагувати</UiButtonOutline
         >
-        <UiButtonOpacityDelete class="flex-shrink-0" @click.stop="" />
+        <UiButtonOpacityDelete class="flex-shrink-0" @click.stop="deleteOne" />
       </div>
     </template>
   </UiTableItem>

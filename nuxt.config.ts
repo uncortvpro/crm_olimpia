@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    '@nuxt/ui', "nuxt-svgo", '@pinia/nuxt', '@vueuse/nuxt'
+    '@nuxt/ui', "nuxt-svgo", '@pinia/nuxt', '@vueuse/nuxt','@vee-validate/nuxt',
   ],
   ssr: false,
   css: ['~/assets/css/fonts.css'],
@@ -16,6 +16,15 @@ export default defineNuxtConfig({
   },
   svgo: {
     autoImportPath: "./assets/img/svg/",
+  },
+  veeValidate: {
+    autoImports: true,
+    componentNames: {
+      Form: 'VForm',
+      Field: 'VField',
+      FieldArray: 'VFieldArray',
+      ErrorMessage: 'VErrorMessage',
+    },
   },
   colorMode: {
     preference: "light",

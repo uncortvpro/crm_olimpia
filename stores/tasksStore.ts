@@ -3,7 +3,7 @@ import { defineStore } from "pinia";
 export const useTasksStore = defineStore("tasksStore", () => {
   const tasks = ref<Task[]>([]);
   const page = ref<number>(1);
-  const endPage = ref(1);
+  const totalPages = ref(1);
 
 
   function setPage(newPage: number) {
@@ -13,11 +13,10 @@ export const useTasksStore = defineStore("tasksStore", () => {
     fetchTasks();
   }
 
-  function deleteTask(id: string) {
-
+  function deleteTask(idArray: string[]) {
     useAuthFetch(`${useApiUrl()}/delete_task`, {
       body: {
-        task_id: id,
+        task_ids: idArray,
       },
     }).then(res => {
       if (res.message === true) {
@@ -34,7 +33,7 @@ export const useTasksStore = defineStore("tasksStore", () => {
       },
     }).then((res) => {
       tasks.value = res.tasks;
-      endPage.value = res.total_pages;
+      totalPages.value = res.total_pages;
     }).catch(res => {
       console.error(res);
     });
@@ -45,7 +44,7 @@ export const useTasksStore = defineStore("tasksStore", () => {
     deleteTask,
     setPage,
     tasks,
-    endPage,
+    totalPages,
     page,
   }
 })

@@ -52,7 +52,7 @@ getOptions();
   <div>
     <UiSelect
       v-model="value"
-      :currentValue="value"
+      :currentValue="modelValue"
       :options="fullOptions"
       :placeholder="placeholder"
       @change="onChangeSelect"

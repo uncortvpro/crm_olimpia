@@ -44,6 +44,10 @@ watchDeep(
   }
 );
 
+watchDeep(valueInput, () => {
+  updateModelValue(valueInput.value);
+});
+
 const fetchParticipants = () => {
   useAuthFetch(`${useApiUrl()}/users`).then((res) => {
     participants.value = res.users;
@@ -89,7 +93,6 @@ getStartValue();
               type="text"
               :placeholder="placeholder"
               v-model="valueInput"
-              @input="handleInput"
               class="flex-1 input_primary_text bg-transparent focus:outline-none"
             />
             <div

@@ -1,6 +1,21 @@
 <script setup lang="ts">
+defineProps<{
+  max: number;
+  total: number;
+  pageCount: number;
+}>();
+const emits = defineEmits(["setPage"]);
+
+const setPage = (page: number) => {
+  emits("setPage", page);
+};
 const page = ref(1);
-const items = ref(Array(55));
+
+watchDeep(page, () => {
+  setPage(page.value);
+});
+
+setPage(page.value);
 </script>
 
 <template>
@@ -10,9 +25,13 @@ const items = ref(Array(55));
       rounded: 'rounded-[50%]',
       base: ' text-[13px] bg-transparent xl:text-[15px]  !border-none ring-0  text-white !p-0 w-[22px] h-[22px] md:w-[24px] md:h-[24px] xl:w-[26px] xl:h-[26px] text-center justify-center hover:bg-primary-color duration-hover',
     }"
+    :activeButton="{
+      class: '!bg-primary-color',
+    }"
     v-model="page"
-    :page-count="5"
-    :total="items.length"
+    :page-count="pageCount"
+    :total="total"
+    :max="max"
   >
     <template #prev="{ onClick }">
       <UiButtonOpacity
@@ -38,4 +57,8 @@ const items = ref(Array(55));
   </UPagination>
 </template>
 
-<style scoped></style>
+<style scoped>
+.pagination_item_active {
+  @apply !text-primary-color;
+}
+</style>

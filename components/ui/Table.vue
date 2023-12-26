@@ -1,17 +1,12 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   pagination: {
     default: true,
     type: Boolean,
   },
-  pageTable: {
+  totalPages: {
     type: Number,
-    default: 1,
-    required: false,
-  },
-  endPage: {
-    type: Number,
-    default: 1,
+    default: 0,
     required: false,
   },
   noMobile: {
@@ -50,23 +45,14 @@ const setPage = (page: number) => {
       </tbody>
     </table>
     <div class="flex justify-center mt-[35px] xl:mt-[30px]">
-      <UiPagination :max="5" :page-count="5" :total="100" :model-value="1" />
+      <UiPagination
+        v-if="pagination"
+        :max="5"
+        :page-count="1"
+        :total="totalPages"
+        @setPage="setPage"
+      />
     </div>
-    <!-- <div
-      class="flex mt-[15px] items-center justify-between md:justify-end gap-[20px] xl:gap-[40px]"
-      v-if="pagination"
-    >
-      <UiButtonTextArrowLeft
-        :disabled="pageTable === 1"
-        @click="setPage(pageTable - 1)"
-        >Попередня сторінка</UiButtonTextArrowLeft
-      >
-      <UiButtonTextArrowRight
-        :disabled="pageTable === endPage"
-        @click="setPage(pageTable + 1)"
-        >Наступна сторінка</UiButtonTextArrowRight
-      >
-    </div> -->
   </div>
 </template>
 
