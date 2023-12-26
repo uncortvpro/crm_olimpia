@@ -1,8 +1,11 @@
 <script setup lang="ts">
-const isModal = ref(false);
-
 const tasksStore = useTasksStore();
 const tasks = computed(() => tasksStore.tasks);
+
+const isModalCreate = ref<boolean>(false);
+const changeModalCreate = (value: boolean) => {
+  isModalCreate.value = value;
+};
 
 const fetchTasks = () => {
   tasksStore.fetchTasks();
@@ -15,18 +18,13 @@ fetchTasks();
   <LayoutModulePage title="Задачі">
     <template #header>
       <div class="flex items-center gap-[20px] md:gap-[25px] xl:gap-[30px]">
-        <UiButtonPrimary>Додати задачу</UiButtonPrimary>
+        <UiButtonPrimary to="/profile/tasks/new_task"
+          >Додати задачу</UiButtonPrimary
+        >
         <UiButtonOpacityDelete></UiButtonOpacityDelete>
       </div>
     </template>
     <template #content>
-      <ModalCreateTask
-        v-model="isModal"
-        label="Додати задачу"
-      ></ModalCreateTask>
-      <!-- <ModalPrimaryWarning v-model="isModal"
-        >Ви впевнені, що хочете видалити задачу?</ModalPrimaryWarning
-      > -->
       <UiTable>
         <template #headers>
           <UiTableCellHeader></UiTableCellHeader>

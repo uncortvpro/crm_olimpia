@@ -7,7 +7,7 @@ defineProps<{
 <template>
   <textarea
     :name="name"
-    class="input_primary_style resize-none rounded-[20px]"
+    class="input_primary_style resize-none rounded-[20px] py-[15px]"
   ></textarea>
 </template>
 

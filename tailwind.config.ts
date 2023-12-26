@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss';
 import VAR from './global/variables';
 
-export default <Partial<Config>> {
+export default <Partial<Config>>{
   content: [
     './components//*.{js,vue,ts}',
     './layouts//*.vue',
@@ -15,7 +15,7 @@ export default <Partial<Config>> {
       center: true,
       padding: {
         DEFAULT: `${VAR.CONTAINER_PADDING_XS}px`,
-        xl:  `${VAR.CONTAINER_PADDING_XL}px`,
+        xl: `${VAR.CONTAINER_PADDING_XL}px`,
       },
     },
     screens: {
@@ -52,7 +52,11 @@ export default <Partial<Config>> {
         'primary-color': '#9de500',
         'primary-gray': "#727272",
         "dark-transparent": "#0000001f",
-        dark: '#3b3b3b'
+        dark: {
+          DEFAULT: '#3b3b3b',
+          100: '#383838'
+        },
+        'placeholder': '#B6B6B6',
       },
       screens: {
         "is-hover": { raw: "(hover: hover)" },

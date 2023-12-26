@@ -3,12 +3,24 @@
 @tailwind utilities;
 
 @layer components {
+  .placeholder {
+    @apply text-placeholder font-medium;
+  }
   .container-reset {
     @apply !p-0 w-full !max-w-none;
   }
 
   .input_primary_style {
-    @apply bg-primary-gray text-[10px] focus:outline-none rounded-[40px] md:text-[12px] xl:text-[14px] px-[15px] py-[8px] xl:px-[20px] xl:py-[15px];
+    @apply bg-primary-gray input_primary_height input_primary_text focus:outline-none rounded-[40px] input_primary_p_x;
+  }
+  .input_primary_p_x {
+    @apply px-[15px] xl:px-[20px];
+  }
+  .input_primary_text {
+    @apply text-[10px] md:text-[12px] xl:text-[14px] !text-white;
+  }
+  .input_primary_height {
+    @apply h-[32px] xl:h-[46px];
   }
   .padding_table_cell {
     @apply p-[10px] 3xl:py-[19px];
@@ -95,4 +107,9 @@ body {
 }
 .input_without_arrow[type="number"] {
   -moz-appearance: textfield;
+}
+
+input::placeholder,
+textarea::placeholder {
+  @apply placeholder;
 }

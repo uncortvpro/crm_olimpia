@@ -1,5 +1,6 @@
 declare interface User {
     name: string;
-    userpic: any;
+    // userpic: any;
+    password: string;
+    email: string;
   }
-  
