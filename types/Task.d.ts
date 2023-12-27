@@ -7,10 +7,6 @@ declare interface Task {
   participants: string[];
   responsible: string;
   deadline: string;
-  status: {
-    "status": string;
-    "colour":string;
-    "type": string;
-  },
+  status: Status,
   comment: string;
 }

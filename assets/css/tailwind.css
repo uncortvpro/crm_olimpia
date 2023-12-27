@@ -11,7 +11,7 @@
   }
 
   .input_primary_style {
-    @apply bg-primary-gray input_primary_height input_primary_text focus:outline-none rounded-[40px] input_primary_p_x;
+    @apply bg-dark input_primary_height input_primary_text focus:outline-none rounded-[40px] input_primary_p_x;
   }
   .input_primary_p_x {
     @apply px-[15px] xl:px-[20px];

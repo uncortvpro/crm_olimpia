@@ -29,7 +29,7 @@
       </CommonMenuProfileItem>
     </li>
     <li>
-      <CommonMenuProfileItem to="/profile/warehouses">
+      <CommonMenuProfileItem to="/profile/contracts">
         <template #logo>
           <SvgoContracts class="!w-full !h-auto"></SvgoContracts>
         </template>
