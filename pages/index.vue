@@ -45,10 +45,11 @@ const login = () => {
               <UiInputPrimary v-model="credentials.login"></UiInputPrimary>
             </UiLabel>
             <!-- <UiLabel label="Пароль:" type="password"> -->
-            <UiInputPrimary
+            <!-- <UiInputPrimary
               type="password"
               v-model="credentials.password"
-            ></UiInputPrimary>
+            ></UiInputPrimary> -->
+            <input  v-model="credentials.password" type="password" name="" id="">
             <!-- </UiLabel>. -->
           </div>
           <UiAlertDanger class="!text-red-600 mt-[15px]" v-if="error">{{
