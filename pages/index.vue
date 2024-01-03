@@ -49,7 +49,7 @@ const login = () => {
               type="password"
               v-model="credentials.password"
             ></UiInputPrimary> -->
-            <input  v-model="credentials.password" type="password" name="" id="">
+            <input class="all:unset;"  v-model="credentials.password" type="password" name="" id="">
             <!-- </UiLabel>. -->
           </div>
           <UiAlertDanger class="!text-red-600 mt-[15px]" v-if="error">{{
@@ -66,4 +66,8 @@ const login = () => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+input{
+  font-family: sans-serif;
+}
+</style>
