@@ -44,13 +44,12 @@ const login = () => {
             <UiLabel label="Email:">
               <UiInputPrimary v-model="credentials.login"></UiInputPrimary>
             </UiLabel>
-            <!-- <UiLabel label="Пароль:" type="password"> -->
-            <!-- <UiInputPrimary
+            <UiLabel label="Пароль:" type="password">
+            <UiInputPrimary
               type="password"
               v-model="credentials.password"
-            ></UiInputPrimary> -->
-            <input class="all:unset;"  v-model="credentials.password" type="password" name="" id="">
-            <!-- </UiLabel>. -->
+            ></UiInputPrimary>
+            </UiLabel>
           </div>
           <UiAlertDanger class="!text-red-600 mt-[15px]" v-if="error">{{
             error
@@ -66,8 +65,4 @@ const login = () => {
   </div>
 </template>
 
-<style scoped>
-input{
-  font-family: sans-serif;
-}
-</style>
+<style scoped></style>

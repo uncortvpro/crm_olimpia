@@ -113,3 +113,8 @@ input::placeholder,
 textarea::placeholder {
   @apply placeholder;
 }
+
+
+input[type="password"]{
+  font-family: sans-serif;
+}
