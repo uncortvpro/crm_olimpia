@@ -44,12 +44,12 @@ const login = () => {
             <UiLabel label="Email:">
               <UiInputPrimary v-model="credentials.login"></UiInputPrimary>
             </UiLabel>
-            <UiLabel label="Пароль:" type="password">
-              <UiInputPrimary
-                type="password"
-                v-model="credentials.password"
-              ></UiInputPrimary>
-            </UiLabel>
+            <!-- <UiLabel label="Пароль:" type="password"> -->
+            <UiInputPrimary
+              type="password"
+              v-model="credentials.password"
+            ></UiInputPrimary>
+            <!-- </UiLabel>. -->
           </div>
           <UiAlertDanger class="!text-red-600 mt-[15px]" v-if="error">{{
             error
