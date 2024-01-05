@@ -19,9 +19,9 @@ export const useReportsSalesAgentsStore = defineStore("reportsSalesAgentsStore",
   }
 
   function deleteReports(idArray: string[]) {
-    useAuthFetch(`${useApiUrl()}/delete_contract`, {
+    useAuthFetch(`${useApiUrl()}/merchants_reports_delete`, {
       body: {
-        contract_ids: idArray,
+        report_id: idArray[0],
       },
     }).then(res => {
       if (res.message === true) {
