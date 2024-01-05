@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  // typeSelect?: string;
+  typeSelect: "status" | "variant";
   placeholder: string;
   typeVariant: VariantType;
   modelValue: string;
@@ -59,7 +59,19 @@ getOptions();
     >
     </UiSelect>
 
-    <CommonModalAddStatus
+    <ModalAddStatus
+      v-if="typeSelect === 'status'"
+      v-model="isAddVariant"
+      :type="props.typeVariant"
+      @actionSuccess="
+        () => {
+          getOptions();
+          switchModal(false);
+        }
+      "
+    />
+    <ModalAddVariant
+      v-else-if="typeSelect === 'variant'"
       v-model="isAddVariant"
       :type="props.typeVariant"
       @actionSuccess="

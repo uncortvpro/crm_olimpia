@@ -14,7 +14,7 @@ defineProps<{
       trigger: 'inline-flex w-full',
       background: '',
       container:
-        '!top-[-1px] rounded-[15px] bg-primary-gray !right-0 !m-auto md:rounded-[25px] shadow-lg w-[100%] overflow-hidden !left-[0px] !transform-none pt-[5px] md:pt-[10px] !pt-[33px] md:!pt-[47px]',
+        '!top-[-1px] rounded-[15px] bg-dark !right-0 !m-auto md:rounded-[25px] shadow-lg w-[100%] overflow-hidden !left-[0px] !transform-none pt-[5px] md:pt-[10px] !pt-[33px] md:!pt-[47px]',
       rounded: '',
       padding: 'p-0',
       base: '!ring-0',

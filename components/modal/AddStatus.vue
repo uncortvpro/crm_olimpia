@@ -25,7 +25,10 @@ const onCreateNewStatus = () => {
 <template>
   <ModalPrimaryTitle title="Додати статус" :ui="{ width: '!max-w-[414px]' }">
     <UiLabel class="mt-[15px] md:mt-[20px]" label="Введіть статус:">
-      <UiInputPrimary v-model="status"></UiInputPrimary>
+      <UiInputPrimary
+        class="!bg-primary-gray"
+        v-model="status"
+      ></UiInputPrimary>
     </UiLabel>
     <UiLabel class="mt-[15px] md:mt-[20px]" label="Оберіть колір:">
       <div class="flex gap-[10px] flex-wrap mt-[5px]">

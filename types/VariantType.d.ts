@@ -1,1 +1,1 @@
-declare type VariantType = "tasks";
+declare type VariantType = "tasks" | "contract" | "category_contract" | "subject_contract";

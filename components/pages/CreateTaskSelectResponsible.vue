@@ -67,7 +67,7 @@ getStartValue();
         width: 'w-full',
         container: '!absolute !top-[100%] !translate-x-0',
         rounded: 'rounded-b-[15px] md:rounded-b-[25px] rounded-t-[0px]',
-        background: 'bg-primary-gray',
+        background: 'bg-dark',
         ring: '',
         divide: '',
         item: {

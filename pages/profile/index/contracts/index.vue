@@ -26,7 +26,7 @@ fetchTasks();
   <LayoutModulePage title="Контракти">
     <template #header>
       <div class="flex items-center gap-[20px] md:gap-[25px] xl:gap-[30px]">
-        <UiButtonPrimary to="/profile/tasks/new_task"
+        <UiButtonPrimary to="/profile/contracts/new_contract"
           >Додати контракт</UiButtonPrimary
         >
         <UiButtonOpacityDelete

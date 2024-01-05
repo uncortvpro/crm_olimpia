@@ -77,7 +77,9 @@ watch(selectDelete, () => {
       <div class="flex items-center 3xl:justify-end gap-[15px] md:gap-[25px]">
         <UiButtonOutline
           class="!px-[20px] !text-[11px] md:!text-[12px] xl:!text-[14px] !py-[8px]"
-          @click.stop="navigateTo(`/profile/tasks/edit_task/${contract._id}`)"
+          @click.stop="
+            navigateTo(`/profile/contracts/edit_contract/${contract._id}`)
+          "
           >Редагувати</UiButtonOutline
         >
         <UiButtonOpacityDelete class="flex-shrink-0" @click.stop="deleteOne" />
