@@ -1,46 +1,44 @@
 import { defineStore } from "pinia";
 
-export const useContractsStore = defineStore("contractsStore", () => {
-  const contracts = ref<Contract[]>([]);
+export const useReportsSalesAgentsStore = defineStore("reportsSalesAgentsStore", () => {
+  const reports = ref<ReportSalesAgents[]>([]);
   const page = ref<number>(1);
   const totalPages = ref(1);
   const keyWord = ref("");
 
-  function searchContracts(value: string) {
+  function searchReports(value: string) {
     keyWord.value = value;
-    fetchContracts();
+    fetchReports();
   }
-
-
 
   function setPage(newPage: number) {
     if (newPage === 0) return false;
     page.value = newPage;
 
-    fetchContracts();
+    fetchReports();
   }
 
-  function deleteContract(idArray: string[]) {
+  function deleteReports(idArray: string[]) {
     useAuthFetch(`${useApiUrl()}/delete_contract`, {
       body: {
         contract_ids: idArray,
       },
     }).then(res => {
       if (res.message === true) {
-        fetchContracts();
+        fetchReports();
       }
     });
   }
 
-  function fetchContracts() {
-    useAuthFetch(`${useApiUrl()}/contracts`, {
+  function fetchReports() {
+    useAuthFetch(`${useApiUrl()}/merchants_reports`, {
       body: {
         page: page.value,
         per_page: 10,
         keyword: keyWord.value,
       },
     }).then((res) => {
-      contracts.value = res.contracts;
+      reports.value = res.reports;
       totalPages.value = res.total_pages;
     }).catch(res => {
       console.error(res);
@@ -48,11 +46,11 @@ export const useContractsStore = defineStore("contractsStore", () => {
   };
 
   return {
-    fetchContracts,
-    deleteContract,
-    searchContracts,
+    fetchReports,
+    deleteReports,
+    searchReports,
     setPage,
-    contracts,
+    reports,
     totalPages,
     page,
   }

@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <header class="relative  top-0 z-30">
+  <header class="relative  top-0 z-[100]">
     <nav class="container w-full z-20">
       <div class="flex flex-wrap items-center justify-between mx-auto py-4">
         <CommonLogo

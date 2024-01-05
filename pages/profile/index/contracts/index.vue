@@ -6,6 +6,8 @@ const deletionTasks = ref<string[]>([]);
 const contracts = computed(() => contractsStore.contracts);
 const totalPages = computed(() => contractsStore.totalPages);
 const setPage = (page: number) => contractsStore.setPage(page);
+const searchContracts = (keyWord: string) =>
+  contractsStore.searchContracts(keyWord);
 
 const switchModalRemove = (value: boolean) => {
   isModalRemove.value = value;
@@ -36,6 +38,10 @@ fetchTasks();
       </div>
     </template>
     <template #content>
+      <CommonSearchOutline
+        @search="searchContracts"
+        class="w-fit"
+      ></CommonSearchOutline>
       <ModalPrimaryWarning
         v-model="isModalRemove"
         @confirm="deleteRequest"

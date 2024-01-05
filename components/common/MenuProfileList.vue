@@ -1,17 +1,37 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const dropdownSales = [
+  {
+    title: "Клієнти",
+    link: "/profile/clients",
+  },
+  {
+    title: "Замовлення",
+    link: "/profile/orders",
+  },
+  {
+    title: "Звіти торгових агентів",
+    link: "/profile/reports_sales_agents",
+  },
+];
+</script>
 
 <template>
   <ul>
     <li>
-      <CommonMenuProfileItem to="/profile/clients">
+      <CommonMenuProfileItem isDropdown to="/profile/clients">
         <template #logo>
           <SvgoSales class="!w-full !h-auto"></SvgoSales>
         </template>
         <template #title>Продажі</template>
+        <template #dropdown>
+          <CommonMenuProfileDropdown
+            :items="dropdownSales"
+          ></CommonMenuProfileDropdown>
+        </template>
       </CommonMenuProfileItem>
     </li>
     <li>
-      <CommonMenuProfileItem to="/profile/objectives">
+      <CommonMenuProfileItem isDropdown to="/profile/objectives">
         <template #logo>
           <SvgoWarehouses class="!w-full !h-auto"></SvgoWarehouses>
         </template>
@@ -21,9 +41,7 @@
     <li>
       <CommonMenuProfileItem to="/profile/finance">
         <template #logo>
-          <SvgoProduction
-            class="!w-full !h-auto"
-          ></SvgoProduction>
+          <SvgoProduction class="!w-full !h-auto"></SvgoProduction>
         </template>
         <template #title>Виробництво</template>
       </CommonMenuProfileItem>
