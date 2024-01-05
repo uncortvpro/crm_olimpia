@@ -70,6 +70,7 @@ watchDeep(
             <CommonSelectVariant
               v-model="inputs.status"
               :typeVariant="'tasks'"
+              :typeSelect="'status'"
               placeholder="Оберіть статус задачі"
             ></CommonSelectVariant>
           </UiLabel>
