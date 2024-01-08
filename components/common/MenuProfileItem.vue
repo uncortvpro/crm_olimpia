@@ -17,7 +17,7 @@ const onClickProfileItem = (e: Event) => {
 <template>
   <div class="flex flex-col relative pl-[40px] min-h-[26px]">
     <CommonMenuLink
-      class="!normal-case"
+      class="!normal-case flex items-center justify-between"
       @click="onClickProfileItem"
       :to="!isDropdown ? to : ''"
     >
@@ -39,6 +39,14 @@ const onClickProfileItem = (e: Event) => {
       >
         <slot name="title"></slot>
       </span>
+      <SvgoArrowTop
+        v-if="isDropdown"
+        :class="
+          cn('text-transparent rotate-[180deg] stroke-white', {
+            'rotate-0': open,
+          })
+        "
+      ></SvgoArrowTop>
     </CommonMenuLink>
   </div>
   <div

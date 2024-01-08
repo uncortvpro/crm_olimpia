@@ -50,7 +50,6 @@ fetchReports();
       >
       <UiTable :totalPages="totalPages" @setPage="setPage">
         <template #headers>
-          <UiTableCellHeader></UiTableCellHeader>
           <UiTableCellHeader>Торгова точка</UiTableCellHeader>
           <UiTableCellHeader>Назва товару</UiTableCellHeader>
           <UiTableCellHeader>Кількість товару</UiTableCellHeader>

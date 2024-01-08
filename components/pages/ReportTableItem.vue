@@ -32,20 +32,9 @@ watch(selectDelete, () => {
 <template>
   <UiTableItem>
     <template #header>
-      <UiCheckbox
-        v-model="selectDelete"
-        @click.stop=""
-        class="inline-block align-middle"
-      ></UiCheckbox>
       <span class="ml-[13px]"> {{ report?.product_name }} </span>
     </template>
     <template #elements="{ active }">
-      <UiTableCell class="hidden 3xl:table-cell" :vIf="active">
-        <template #title></template>
-        <template #value>
-          <UiCheckbox v-model="selectDelete"></UiCheckbox>
-        </template>
-      </UiTableCell>
       <UiTableCell :vIf="active">
         <template #title>Торгова точка</template>
         <template #value>{{ report?.shop_name }}</template>
@@ -80,7 +69,11 @@ watch(selectDelete, () => {
       <div class="flex items-center 3xl:justify-end gap-[15px] md:gap-[25px]">
         <UiButtonOutline
           class="!px-[20px] !text-[11px] md:!text-[12px] xl:!text-[14px] !py-[8px]"
-          @click.stop="navigateTo(`/profile/tasks/edit_task/${report._id}`)"
+          @click.stop="
+            navigateTo(
+              `/profile/reports_sales_agents/edit_report/${report._id}`
+            )
+          "
           >Редагувати</UiButtonOutline
         >
         <UiButtonOpacityDelete class="flex-shrink-0" @click.stop="deleteOne" />

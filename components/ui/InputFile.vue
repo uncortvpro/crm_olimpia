@@ -19,11 +19,8 @@
 
 <template>
   <input
-    id="inp_file_popup"
     ref="fileUpload"
-    class="input_photo"
     type="file"
-    name="inp_file_popup"
     @change="handleFileUpload()"
   />
 </template>
