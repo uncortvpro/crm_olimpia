@@ -11,6 +11,7 @@ const inputs = ref<InputsCreateContract>({
   subject: "",
   status: "",
   scans_links: [],
+  delete_links: [],
   scans: [],
 });
 const error = ref("");
@@ -31,20 +32,24 @@ const formData = () => {
   data.append("subject", inputs.value.subject);
   data.append("status", inputs.value.status);
 
-  inputs.value.scans_links.forEach((certificate, index) => {
-    const fieldName = `scans_links[${index + 1}]`;
-    data.append(fieldName, certificate);
+  inputs.value.delete_links.forEach((scansLink, index, array) => {
+    const fieldName = `delete_scans`;
+    data.append(fieldName, scansLink);
   });
 
-  inputs.value.scans.forEach((certificate, index) => {
-    const fieldName = `scans[${index + 1}]`;
-    data.append(fieldName, certificate);
+  const deleteLinkInScans = inputs.value.scans.filter(el => typeof el !== 'string');
+
+  deleteLinkInScans.forEach((scan, index) => {
+    const fieldName = `scans`;
+    data.append(fieldName, scan);
   });
 
   return data;
 };
 
 const createContract = () => {
+  message.value = "";
+  error.value = "";
   useApiFetch(`${useApiUrl()}/update_contract`, {
     method: "POST",
     body: formData(),
@@ -68,7 +73,7 @@ const fetchContract = () => {
     inputs.value.date = res.date;
     inputs.value.deadline = res.deadline;
     inputs.value.number = res.number;
-    inputs.value.scans_links = res?.scans_links || [];
+    inputs.value.scans = res?.scans_links || [];
     inputs.value.status = res.status.status;
     inputs.value.subject = res.subject;
   });

@@ -94,7 +94,10 @@ watchDeep(
               placeholder="Оберіть дату договору"
             ></UiDatePicker>
           </UiLabel>
-          <PagesCreateContractAddingPdf v-model="inputs.scans"></PagesCreateContractAddingPdf>
+          <PagesCreateContractAddingPdf
+            v-model:deleteLinks="inputs.delete_links"
+            v-model="inputs.scans"
+          ></PagesCreateContractAddingPdf>
 
           <div>
             <UiAlertDanger v-if="error">{{ error }}</UiAlertDanger>

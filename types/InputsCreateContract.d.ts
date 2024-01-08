@@ -7,5 +7,6 @@ declare interface InputsCreateContract {
   subject:string;
   status:string;
   scans_links:string[];
+  delete_links: string[];
   scans: File[];
 }

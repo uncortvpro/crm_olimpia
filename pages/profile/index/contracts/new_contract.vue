@@ -8,6 +8,7 @@ const inputs = ref<InputsCreateContract>({
   subject: "",
   status: "",
   scans_links: [],
+  delete_links: [],
   scans: [],
 });
 const error = ref("");
@@ -26,20 +27,23 @@ const formData = () => {
   data.append("subject", inputs.value.subject);
   data.append("status", inputs.value.status);
 
-  inputs.value.scans_links.forEach((certificate, index) => {
-    const fieldName = `scans_links[${index + 1}]`;
-    data.append(fieldName, certificate);
+  inputs.value.scans_links.forEach((scansLink, index) => {
+    const fieldName = `scans_links`;
+    data.append(fieldName, scansLink);
   });
 
-  inputs.value.scans.forEach((certificate, index) => {
-    const fieldName = `scans[${index + 1}]`;
-    data.append(fieldName, certificate);
+  // data.append("scans", inputs.value.scans[0]);
+  inputs.value.scans.forEach((scan, index) => {
+    const fieldName = `scans`;
+    data.append(fieldName, scan);
   });
 
   return data;
 };
 
 const createContract = () => {
+  message.value = "";
+  error.value = "";
   useApiFetch(`${useApiUrl()}/add_contract`, {
     method: "POST",
     body: formData(),

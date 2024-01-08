@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import VuePdfEmbed from "vue-pdf-embed";
 
-const props = defineProps<{
+type Props = {
   value: any[];
   buttonAdding?: boolean;
-}>();
-const emits = defineEmits(["updateModelValue"]);
+};
+const props = defineProps<Props>();
+
+const emits = defineEmits(["updateModelValue", "updateDeleteLinks"]);
 const addedCertificate = ref<any[]>([]);
 
 function convertToBase64(file: any, callback: Function) {
@@ -41,16 +43,16 @@ const updateModelValue = (value: any) => {
   emits("updateModelValue", value);
 };
 
-const updateInput = (value: any) => {
-  if (value.type !== "application/pdf") return false;
-  if (props.value.length === 3) return false;
-
-  updateModelValue([...props.value, value]);
+const updateDeleteLinks = (value: any) => {
+  emits("updateDeleteLinks", value);
 };
 
-const deleteCertificate = (index: number) => {
-  console.log(props.value.filter((el: any, ind: number) => ind !== index));
+const deleteCertificate = (index: number, item: any) => {
+  if (typeof item === "string") {
+    console.log(item);
 
+    updateDeleteLinks(item);
+  }
   const newFilsArray: any[] = props.value.filter(
     (el: any, ind: number) => ind !== index
   );
@@ -78,16 +80,16 @@ renderPdf();
         :key="index"
         class="group relative h-0 overflow-hidden rounded-[5px] pt-[120%] xl:rounded-[10px]"
       >
-        <div class="absolute left-0 top-0 z-10 h-full w-full">
+        <a :href="item" class="absolute block left-0 top-0 z-10 h-full w-full">
           <vue-pdf-embed
             class="block h-full w-full object-cover"
             :source="item"
           />
-        </div>
+        </a>
         <UiButtonOpacity
           type="button"
           class="absolute right-[10%] w-[15px] h-[15px] top-[10%] z-10 flex items-start justify-end"
-          @click="deleteCertificate(index)"
+          @click="deleteCertificate(index, item)"
         >
           <SvgoClose class="stroke-black !h-full !w-full" />
         </UiButtonOpacity>

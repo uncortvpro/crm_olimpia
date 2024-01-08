@@ -19,17 +19,16 @@ const { value, errorMessage } = useField(
 );
 
 const checkValidation = () => {
-  // if (
-  //   (props.inputs.deadline &&
-  //     props.inputs.description &&
-  //     props.inputs.headline &&
-  //     props.inputs.responsible,
-  //   props.inputs.status)
-  // ) {
-  value.value = true;
-  // } else {
-  //   value.value = false;
-  // }
+  if (
+    props.inputs.product_amount &&
+    props.inputs.product_name &&
+    props.inputs.sale_amount &&
+    props.inputs.shop_name
+  ) {
+    value.value = true;
+  } else {
+    value.value = false;
+  }
 };
 
 watchDeep(errorMessage, () => {

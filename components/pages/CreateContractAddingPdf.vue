@@ -1,17 +1,27 @@
 <script setup lang="ts">
-const props = defineProps<{
+type Props = {
   modelValue: any[];
-}>();
+  maxCount?: number;
+  deleteLinks: string[];
+};
 
-const emits = defineEmits(["update:modelValue"]);
+const props = withDefaults(defineProps<Props>(), {
+  maxCount: 5,
+});
+
+const emits = defineEmits(["update:modelValue", "update:deleteLinks"]);
 
 const updateModelValue = (value: any) => {
   emits("update:modelValue", value);
 };
 
+const updateDeleteLinks = (value: any) => {
+  emits("update:deleteLinks", [...props.deleteLinks, value]);
+};
+
 const updateInput = (value: any) => {
   if (value.type !== "application/pdf") return false;
-  if (props.modelValue.length === 3) return false;
+  if (props.modelValue.length === props.maxCount) return false;
 
   updateModelValue([...props.modelValue, value]);
 };
@@ -19,7 +29,7 @@ const updateInput = (value: any) => {
 
 <template>
   <div class="input_primary_height self-end relative flex items-center">
-    <UiButtonOpacityAdding class="relative">
+    <UiButtonOpacityAdding v-if="modelValue.length < 2" class="relative">
       <label class="absolute left-0 top-0 z-50 h-full w-full cursor-pointer">
         <UiInputFile
           accept="application/pdf"
@@ -34,6 +44,7 @@ const updateInput = (value: any) => {
     <CommonAddingPdf
       :value="modelValue"
       @updateModelValue="updateModelValue"
+      @updateDeleteLinks="updateDeleteLinks"
     ></CommonAddingPdf>
   </div>
 </template>

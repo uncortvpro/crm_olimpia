@@ -10,6 +10,8 @@ const error = ref("");
 const message = ref("");
 
 const createTask = () => {
+  message.value = "";
+  error.value = "";
   useAuthFetch(`${useApiUrl()}/add_task`, {
     body: {
       headline: inputs.value.headline,
@@ -26,8 +28,6 @@ const createTask = () => {
     }
   });
 };
-
-
 </script>
 
 <template>

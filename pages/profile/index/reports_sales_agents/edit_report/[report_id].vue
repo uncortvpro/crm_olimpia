@@ -27,6 +27,8 @@ const fetchReport = () => {
 };
 
 const updateReport = () => {
+  message.value = "";
+  error.value = "";
   useAuthFetch(`${useApiUrl()}/merchants_reports_update`, {
     body: {
       report_id: reportId.value,

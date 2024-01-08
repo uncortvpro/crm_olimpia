@@ -27,6 +27,8 @@ const fetchTask = () => {
 };
 
 const updateTask = () => {
+  message.value = "";
+  error.value = "";
   useAuthFetch(`${useApiUrl()}/update_task`, {
     body: {
       task_id: taskId.value,
