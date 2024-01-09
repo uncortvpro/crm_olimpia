@@ -7,7 +7,7 @@ definePageMeta({
 <template>
   <div class="relative items-start flex">
     <div
-      class="hidden col-span-3 bg_blur_dark basis-[353px] xl:col-span-3 4xl:col-span-2 lg:block sticky top-0 rounded-r-[40px] overflow-x-scroll scroll_bar px-[30px] pb-[155px] pt-[50px] 4xl:pt-[44px] bg-beige"
+      class="hidden col-span-3 bg_blur_dark basis-[353px] xl:col-span-3 4xl:col-span-2 lg:block sticky top-0 rounded-r-[40px] overflow-x-hidden scroll_bar px-[30px] pb-[155px] pt-[50px] 4xl:pt-[44px] bg-beige"
     >
       <CommonMenuProfileList
         class="flex flex-col gap-[32px]"
