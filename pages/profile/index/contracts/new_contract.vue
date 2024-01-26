@@ -55,10 +55,6 @@ const createContract = () => {
     }
   });
 };
-
-watchDeep(inputs, () => {
-  console.log(inputs.value);
-});
 </script>
 
 <template>

@@ -69,6 +69,10 @@
     background-repeat: no-repeat;
     background-position: -10% 110%, 10% 80%, 151% 50%;
   }
+
+  .title_primary {
+    @apply font-semibold text-white text-[16px] md:text-[18px] xl:text-[20px];
+  }
 }
 * {
   @apply leading-[100%];
@@ -114,7 +118,6 @@ textarea::placeholder {
   @apply placeholder;
 }
 
-
-input[type="password"]{
+input[type="password"] {
   font-family: sans-serif;
 }

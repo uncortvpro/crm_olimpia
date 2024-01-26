@@ -12,7 +12,7 @@ const updateInput = (value: any) => {
 
 <template>
   <div
-    class="relative overflow-hidden h-0 rounded-[3px] bg-dark pt-[120%] md:rounded-[5px] xl:rounded-[10px]"
+    class="relative overflow-hidden h-0 rounded-[3px] bg-dark pt-[120%] md:rounded-[5px]"
   >
     <label class="absolute left-0 top-0 z-50 h-full w-full cursor-pointer">
       <UiInputFile

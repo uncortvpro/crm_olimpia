@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-  inputs: InputsCreateContract;
+  inputs: InputsCreateClient;
   error: string;
 }>();
 
@@ -11,7 +11,7 @@ const updateModelValue = (value: string) => {
 };
 
 const { value, errorMessage } = useField(
-  "createContract",
+  "createClient",
   {},
   {
     validateOnValueUpdate: false,
@@ -20,13 +20,18 @@ const { value, errorMessage } = useField(
 
 const checkValidation = () => {
   if (
-    props.inputs.category &&
-    props.inputs.counterpartie &&
-    props.inputs.date &&
-    props.inputs.deadline &&
+    props.inputs.name &&
+    props.inputs.edrpou &&
+    props.inputs.ipn &&
+    props.inputs.bank &&
+    props.inputs.account_number &&
+    props.inputs.address_jur &&
+    props.inputs.address_phiz &&
+    props.inputs.address_sklad &&
+    props.inputs.pib_kerivnyka &&
+    props.inputs.pib_kontaktna &&
     props.inputs.number &&
-    props.inputs.status &&
-    props.inputs.subject
+    props.inputs.email
   ) {
     value.value = true;
   } else {

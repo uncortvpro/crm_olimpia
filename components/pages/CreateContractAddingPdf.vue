@@ -41,12 +41,13 @@ const updateInput = (value: any) => {
     >
   </div>
   <div class="col-span-2">
-    <CommonAddingPdf
+    <CommonShowPdfList
       :value="modelValue"
       @updateModelValue="updateModelValue"
       @updateDeleteLinks="updateDeleteLinks"
-    ></CommonAddingPdf>
+    ></CommonShowPdfList>
   </div>
+
 </template>
 
 <style scoped></style>
