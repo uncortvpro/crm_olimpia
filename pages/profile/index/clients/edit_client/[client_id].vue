@@ -91,16 +91,13 @@ const editClient = () => {
     body: formData(),
   }).then((res) => {
     if (res.message) {
-      message.value = "Контракт успішно відредаговано!";
+      navigateTo('/profile/clients')
     } else {
       error.value = "Помилка! Спробуйте ще раз!";
     }
   });
 };
 
-watchDeep(inputs, () => {
-  console.log(inputs.value);
-});
 
 getClient();
 </script>

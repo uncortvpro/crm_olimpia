@@ -138,7 +138,7 @@ watchDeep(
                   placeholder="Введіть терміни та умови"
                 ></UiInputPrimary>
               </UiLabel>
-              <UiLabel label="Прикріпити договір:" class="xl:max-w-[465px]">
+              <UiLabel label="Прикріпити договір:" for="" class="xl:max-w-[465px]">
                 <CommonAddingPdf
                   :maxCount="5"
                   v-model="inputs.contracts"
