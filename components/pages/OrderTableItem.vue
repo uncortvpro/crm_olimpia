@@ -71,7 +71,7 @@ watch(selectDelete, () => {
         <template #title>Статус</template>
         <template #value>
           <CommonStatusOutput :color="order?.status?.colour">{{
-            order?.status?.name
+            order?.status?.status
           }}</CommonStatusOutput>
         </template>
       </UiTableCell>

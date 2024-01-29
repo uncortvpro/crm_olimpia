@@ -25,7 +25,7 @@ const getOrder = () => {
     inputs.value.photos = res.photos;
     inputs.value.sales_agent = res.sales_agent;
     inputs.value.shop = res.shop;
-    inputs.value.status = res.status.name;
+    inputs.value.status = res.status.status;
   });
 };
 
@@ -41,7 +41,7 @@ const editClient = () => {
       shop: inputs.value.shop,
       products: inputs.value.products,
       status: inputs.value.status,
-      photos: inputs.value.photos
+      photos: inputs.value.photos,
     },
   }).then((res) => {
     if (res.message) {

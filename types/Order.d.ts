@@ -13,7 +13,7 @@ declare interface Order {
   total_amount_discount: number,
   status: {
     colour: string;
-    name: string;
+    status: string;
     _id: { $oid: string };
   },
   photos: string[];
